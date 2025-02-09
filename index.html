@@ -3,8 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Forbidden Love: The Dragon Prince's Curse</title>
+  <title>Dragonfire’s Embrace</title>
   <style>
+
+.fireworks {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: gold;
+  border-radius: 50%;
+  animation: explode 1.5s ease-out forwards;
+}
+
+@keyframes explode {
+  0%   { transform: scale(1);   opacity: 1; }
+  100% { transform: scale(5);   opacity: 0; }
+}
+
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  color: red;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%   { transform: translate(-50%, -50%) scale(0.9); }
+  50%  { transform: translate(-50%, -50%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(0.9); }
+}
     body {
       text-align: center;
       background-color: black;
@@ -19,25 +49,92 @@
       opacity: 0;
       animation: fadeIn 2s forwards;
     }
+    
+    
     .btn {
-      font-size: 16px;
-      padding: 10px 20px;
-      background-color: pink;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.2s ease-in-out;
-      margin: 5px;
-    }
-    .btn:hover {
-      transform: scale(1.05);
-    }
-    .story {
-      display: none;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-      margin-top: 20px;
-    }
+  /* Uses clamp() so the font stays readable on phone (14px min) 
+     yet scales up on larger screens (22px max). */
+  font-size: clamp(12px, 2vw, 16px);
+
+  /* Similarly, padding scales from about 8px–12px on phone
+     up to 16px–20px on desktop. */
+  padding: clamp(8px, 2vw, 16px) clamp(12px, 3vw, 20px);
+
+  /* Medieval-fantasy gradient background (brownish-gold) */
+  background: linear-gradient(#5e3e2d, #8b5a2b);
+  color: #fceecf; /* Light cream text on a dark background */
+  font-weight: bold;
+  font-family: "Georgia", serif; /* or another serif for a classic vibe */
+
+  /* Gold-like border, scaled in clamp for consistent thickness 
+     (2px–3px on small screens, 5px on large) */
+  border: clamp(2px, 0.4vw, 5px) solid #dab96c;
+  border-radius: 8px;
+  cursor: pointer;
+
+  /* Soft shadow to add depth */
+  box-shadow: 0 0 clamp(4px, 0.8vw, 8px) rgba(218, 185, 108, 0.5);
+
+  /* Transition for hover effect */
+  transition: all 0.2s ease-in-out;
+
+  /* Some margin around the button */
+  margin: 5px;
+}
+
+.btn:hover {
+  /* Slightly brighter gradient on hover */
+  background: linear-gradient(#8b5a2b, #5e3e2d);
+  box-shadow: 0 0 clamp(6px, 1vw, 10px) rgba(218, 185, 108, 0.9);
+  border-color: #f0d699;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  /* Pressed state: slightly darker, push down */
+  background: linear-gradient(#4b2b1f, #5e3e2d);
+  transform: translateY(1px);
+}
+
+
+
+.story {
+  display: none;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+
+  /* Center and add spacing 
+     clamp for margin/padding to scale across devices */
+  margin: clamp(10px, 5vh, 20px) auto;
+  padding: clamp(10px, 2vw, 20px);
+
+  /* Keep the maximum text width comfortable on large screens 
+     while still using the phone’s entire screen if it's narrower. */
+  max-width: 650px;
+
+  /* If you want the story text to also scale in size, set a clamp here: */
+  font-size: clamp(14px, 2.5vw, 18px);
+
+  /*
+    A near-black background reminiscent of BG3 
+    but lighter than body to differentiate
+  */
+  background-color: #2a2724;
+  color: #f2e9d8;
+
+  /* 
+    Use a 'ridge' or 'groove' or 'double' border 
+    to give that medieval UI feel. 
+    clamp ensures it doesn’t overwhelm on small screens.
+  */
+  border: clamp(3px, 0.6vw, 6px) ridge #6e5c42;
+  border-radius: 6px;
+
+  /* A box shadow for a subtle glow */
+  box-shadow: 0 0 clamp(6px, 1.2vw, 10px) 2px rgba(110, 92, 66, 0.7);
+}
+
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -46,16 +143,33 @@
 </head>
 <body>
 
-  <!-- START BUTTON -->
-  <div class="container">
-    <button id="startBtn" class="btn">Only the Prettiest Girl Can Run This</button>
+
+  <!-- START BUTTON (updated) -->
+<div class="container">
+    <img 
+  src="Dragon City.png" 
+  alt="Dragon City" 
+  id="dragonCityImage" 
+/>
+    <button id="startBtn" class="btn">Begin the Journey</button>
+  </div>
+
+  <!-- BACKSTORY/INTRO PAGE -->
+<div id="introStory" class="story">
+    <p>In the distant East lies a proud empire, steeped in centuries of tradition and guarded by legends of serpentine dragons that rule the skies. Born of this imperial lineage is <strong>Louis</strong>, a half-dragon prince said to carry the fiery blood of ancient beasts in his veins.</p>
+  
+    <p>Throughout your homeland, whispers tell of his inhuman might and the regal dynasty that shaped him—an empire famed for ceremonial pageantry and cunning warfare. Now, with tensions brewing and borders stirred by rumors of war, you have found yourself upon a collision course with this fabled prince.</p>
+  
+    <p>Fate (or folly) has drawn you both to an ominous forest of forbidden magic, its secrets older than any kingdom. And here, in these haunted woods, your paths will cross, sparking a tale of conflict, destiny, and perhaps a bond neither realm could foresee.</p>
+  
+    <button class="btn" onclick="choosePath('scene1')">Continue</button>
   </div>
 
   <!-- SCENE 1: Intro -->
   <div id="scene1" class="story">
     <p>You stand in the heart of the <strong>Cursed Woods</strong>, feeling ancient magic in the air.</p>
     <p>“Who dares trespass here?” A low voice echoes.</p>
-    <p>A tall figure emerges: dark hair, dark eyes, scales across his arms, and a single horn. <strong>Louis, the half-dragon prince</strong> from an enemy kingdom.</p>
+    <p>A tall figure emerges: dark hair, dark eyes, scales across his arms, and two horns. <strong>Louis, the half-dragon prince</strong> from an enemy kingdom.</p>
     <p>He fixes you with a piercing gaze.</p>
     <button class="btn" onclick="choosePath('scene2')">Next</button>
   </div>
@@ -626,7 +740,7 @@
     // Start button -> first scene
     document.getElementById("startBtn").addEventListener("click", function() {
       this.style.display = "none";
-      choosePath("scene1");
+      choosePath("introStory");
     });
 
     // Reusable scene transition function
@@ -643,25 +757,75 @@
         nextScene.style.display = "block";
         setTimeout(() => {
           nextScene.style.opacity = "1";
+          
         }, 50);
+
+        colorTextInScene(nextScene);
+    
       } else {
         endGame();
       }
     }
 
-    // End game -> displays final text
-    function endGame() {
-      document.body.innerHTML = `
-        <div style='text-align: center; padding: 50px;'>
-          <h1 style='margin-bottom: 20px;'>
-            You and Louis share a passionate kiss beneath the moonlight.<br>
-            Fireworks of magic and dragon flame light the sky.<br>
-            Your fate is sealed together in love.
-          </h1>
-          <p>Thank you for playing! All paths lead to this happy ending, for your hearts are bound by destiny.</p>
-        </div>
-      `;
+    function showFireworks() {
+    for (let i = 0; i < 30; i++) {
+      let firework = document.createElement("div");
+      firework.classList.add("fireworks");
+      document.body.appendChild(firework);
+
+      let x = Math.random() * window.innerWidth;
+      let y = Math.random() * window.innerHeight;
+      firework.style.left = x + "px";
+      firework.style.top = y + "px";
+
+      // Remove the firework after 1.5s
+      setTimeout(() => {
+        firework.remove();
+      }, 1500);
     }
+  }
+
+  function endGame() {
+  // Wipes out previous content
+  document.body.innerHTML = `
+    <div style='text-align: center; padding: 50px; position: relative;'>
+      <h1 style='margin-bottom: 20px; color: white;'>
+        You and Louis share a passionate kiss beneath the moonlight.<br>
+        Fireworks of magic and dragon flame light the sky.<br>
+        Your fate is sealed together in love.
+      </h1>
+    </div>
+  `;
+
+  // Create the pulsing heart in the center
+  let heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerText = '❤️';
+  document.body.appendChild(heart);
+
+  // First burst of fireworks
+  showFireworks();
+
+  // OPTIONAL: keep triggering fireworks every 2 seconds
+  setInterval(showFireworks, 2000);
+
+  }
+
+  function colorTextInScene(element) {
+  let html = element.innerHTML;
+  // Turn "Louis" purple
+  html = html.replace(/\bLouis\b/g, "<span style='color: #CC33FF;'>Louis</span>");
+  // Turn "you" any case orange
+  html = html.replace(/\byou\b/gi, "<span style='color: #FF6600;'>$&</span>");
+  element.innerHTML = html;
+  
+
+
+  
+}
+
+
+
   </script>
 </body>
 </html>
