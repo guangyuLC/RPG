@@ -53,11 +53,20 @@
       transition: background-color 2s, opacity 1s;
     }
     .container {
-      max-width: 600px;
-      margin: auto;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-    }
+  max-width: 600px;
+  margin: auto;
+  /* The lines below are new/updated: */
+  background: url("Dragon City.png") no-repeat center center;
+  background-size: cover;        /* or "contain" if you prefer */
+  min-height: 80vh;             /* Ensures enough vertical space to see the image */
+  display: flex;                /* So we can center button within container */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
     
     
     .btn {
@@ -155,11 +164,6 @@
 
   <!-- START BUTTON (updated) -->
 <div class="container">
-    <img 
-  src="Dragon City.png" 
-  alt="Dragon City" 
-  id="dragonCityImage" 
-/>
     <button id="startBtn" class="btn">Begin the Journey</button>
   </div>
 
