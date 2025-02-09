@@ -6,6 +6,15 @@
   <title>Dragonfire’s Embrace</title>
   <style>
 
+#louisImage {
+  display: block;      /* So we can center via margin auto */
+  margin: 0 auto 1rem; /* 0 left/right, 1rem bottom spacing */
+  max-width: 50%;      /* or 80%, whatever size you prefer */
+  height: auto;        /* keeps aspect ratio */
+  border: 2px solid #dab96c;
+  border-radius: 8px;
+}
+
 #dragonCityImage {
   display: block;        /* Center using margin auto (needs block) */
   margin: 0 auto 15px;   /* 0 left/right, 15px bottom for spacing */
@@ -190,6 +199,9 @@
 
   <!-- SCENE 1: Intro -->
   <div id="scene1" class="story">
+
+    <img src="Louis.png" alt="Louis" id="louisImage" />
+
     <p>You stand in the heart of the <strong>Cursed Woods</strong>, feeling ancient magic in the air.</p>
     <p>“Who dares trespass here?” A low voice echoes.</p>
     <p>A tall figure emerges: dark hair, dark eyes, scales across his arms, and two horns. <strong>Louis, the half-dragon prince</strong> from an enemy kingdom.</p>
