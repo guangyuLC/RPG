@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forbidden Love: The Dragon Prince's Curse</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: black;
+      color: white;
+      font-family: "Georgia", serif;
+      padding: 20px;
+      transition: background-color 2s, opacity 1s;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+    .btn {
+      font-size: 16px;
+      padding: 10px 20px;
+      background-color: pink;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+      margin: 5px;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    .story {
+      display: none;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      margin-top: 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- START BUTTON -->
+  <div class="container">
+    <button id="startBtn" class="btn">Only the Prettiest Girl Can Run This</button>
+  </div>
+
+  <!-- SCENE 1: Intro -->
+  <div id="scene1" class="story">
+    <p>You stand in the heart of the <strong>Cursed Woods</strong>, feeling ancient magic in the air.</p>
+    <p>“Who dares trespass here?” A low voice echoes.</p>
+    <p>A tall figure emerges: dark hair, dark eyes, scales across his arms, and a single horn. <strong>Louis, the half-dragon prince</strong> from an enemy kingdom.</p>
+    <p>He fixes you with a piercing gaze.</p>
+    <button class="btn" onclick="choosePath('scene2')">Next</button>
+  </div>
+
+  <!-- SCENE 2: Choose Class -->
+  <div id="scene2" class="story">
+    <p>Louis smirks. “State your name and power, intruder.”</p>
+    <p>Do you reveal yourself as a Witch or an Archer?</p>
+    <button class="btn" onclick="choosePath('scene3')">I am a Witch.</button>
+    <button class="btn" onclick="choosePath('scene4')">I am an Archer.</button>
+  </div>
+
+  <!-- SCENE 3: Witch Path Start -->
+  <div id="scene3" class="story">
+    <p>“A Witch?” Louis repeats, flicking his gaze over you. “Your magic is nothing compared to dragonfire.”</p>
+    <p>He challenges you to prove your power.</p>
+    <button class="btn" onclick="choosePath('scene5')">Show a spark of magic</button>
+    <button class="btn" onclick="choosePath('scene6')">Refuse to show your power</button>
+  </div>
+
+  <!-- SCENE 4: Archer Path Start -->
+  <div id="scene4" class="story">
+    <p>“An Archer?” Louis narrows his eyes. “I’ve faced many arrows before. None could pierce my dragon scales.”</p>
+    <p>He demands to see your skill.</p>
+    <button class="btn" onclick="choosePath('scene7')">Ready your bow</button>
+    <button class="btn" onclick="choosePath('scene8')">Refuse to fight</button>
+  </div>
+
+  <!-- SCENE 5 -->
+  <div id="scene5" class="story">
+    <p>You summon a flicker of witchfire between your fingers. Louis’s dark eyes widen slightly.</p>
+    <p>“Impressive, but still weaker than dragon flame,” he scoffs.</p>
+    <p>Will you challenge him or attempt diplomacy?</p>
+    <button class="btn" onclick="choosePath('scene9')">Challenge him</button>
+    <button class="btn" onclick="choosePath('scene10')">Try to reason with him</button>
+  </div>
+
+  <!-- SCENE 6 -->
+  <div id="scene6" class="story">
+    <p>Louis sneers. “Are you too frightened to show your powers?”</p>
+    <p>Your refusal intrigues him. He steps closer.</p>
+    <p>Will you stand firm or back away?</p>
+    <button class="btn" onclick="choosePath('scene11')">Stand firm</button>
+    <button class="btn" onclick="choosePath('scene12')">Back away</button>
+  </div>
+
+  <!-- SCENE 7 -->
+  <div id="scene7" class="story">
+    <p>You notch an arrow and take aim. Louis stands still, his scales glimmering in the moonlight.</p>
+    <p>Do you fire or hesitate?</p>
+    <button class="btn" onclick="choosePath('scene13')">Fire a warning shot</button>
+    <button class="btn" onclick="choosePath('scene14')">Lower your bow</button>
+  </div>
+
+  <!-- SCENE 8 -->
+  <div id="scene8" class="story">
+    <p>Louis’s horned silhouette looms over you. “You have no will to fight?” he asks in disbelief.</p>
+    <p>Choose your response:</p>
+    <button class="btn" onclick="choosePath('scene15')">“I don’t want needless bloodshed.”</button>
+    <button class="btn" onclick="choosePath('scene16')">“I came here seeking something else.”</button>
+  </div>
+
+  <!-- SCENE 9 -->
+  <div id="scene9" class="story">
+    <p>Your witchfire clashes with Louis’s dragon flame, illuminating the forest in sparks and embers.</p>
+    <p>He snarls, “You dare challenge me?”</p>
+    <button class="btn" onclick="choosePath('scene17')">Push your magic further</button>
+    <button class="btn" onclick="choosePath('scene18')">Relent, ending the clash</button>
+  </div>
+
+  <!-- SCENE 10 -->
+  <div id="scene10" class="story">
+    <p>You lower your hands. “I didn’t come here to fight you,” you say quietly.</p>
+    <p>Louis narrows his eyes. “Then why did you come?”</p>
+    <button class="btn" onclick="choosePath('scene19')">Explain your quest</button>
+    <button class="btn" onclick="choosePath('scene20')">Stay silent</button>
+  </div>
+
+  <!-- SCENE 11 -->
+  <div id="scene11" class="story">
+    <p>You stand your ground. Louis circles you warily. “You’re either brave or foolish,” he mutters.</p>
+    <p>Choose your response:</p>
+    <button class="btn" onclick="choosePath('scene21')">“I’m braver than you think.”</button>
+    <button class="btn" onclick="choosePath('scene22')">“Perhaps I am both.”</button>
+  </div>
+
+  <!-- SCENE 12 -->
+  <div id="scene12" class="story">
+    <p>You step back. Louis steps forward, following your retreat.</p>
+    <p>“Running away? Where’s your resolve?” he taunts.</p>
+    <button class="btn" onclick="choosePath('scene23')">Gather courage and speak</button>
+    <button class="btn" onclick="choosePath('scene24')">Turn and leave the forest</button>
+  </div>
+
+  <!-- SCENE 13 -->
+  <div id="scene13" class="story">
+    <p>You release an arrow that zips past Louis’s shoulder. He doesn’t flinch.</p>
+    <p>He smirks. “That’s all you’ve got?”</p>
+    <button class="btn" onclick="choosePath('scene25')">Challenge him physically</button>
+    <button class="btn" onclick="choosePath('scene26')">Reveal you mean no harm</button>
+  </div>
+
+  <!-- SCENE 14 -->
+  <div id="scene14" class="story">
+    <p>You lower your bow. Louis tilts his head, curiosity gleaming in his eyes.</p>
+    <p>He approaches slowly.</p>
+    <button class="btn" onclick="choosePath('scene27')">Explain your reason for coming</button>
+    <button class="btn" onclick="choosePath('scene28')">Stay silent and let him speak</button>
+  </div>
+
+  <!-- SCENE 15 -->
+  <div id="scene15" class="story">
+    <p>Louis studies you, scales glinting in the moonlight. “You speak of peace?”</p>
+    <p>He crosses his arms, waiting for your explanation.</p>
+    <button class="btn" onclick="choosePath('scene29')">Elaborate on your peaceful intentions</button>
+    <button class="btn" onclick="choosePath('scene30')">Offer him a symbolic gift</button>
+  </div>
+
+  <!-- SCENE 16 -->
+  <div id="scene16" class="story">
+    <p>“What did you come here for?” he demands. “You stand in my territory, unafraid.”</p>
+    <p>You see a flicker of curiosity behind the menace.</p>
+    <button class="btn" onclick="choosePath('scene31')">Speak of your quest (treasure/lost magic/etc.)</button>
+    <button class="btn" onclick="choosePath('scene32')">Ask about him instead</button>
+  </div>
+
+  <!-- SCENE 17 -->
+  <div id="scene17" class="story">
+    <p>Your witchfire intensifies, clashing with Louis’s blazing flame. Sparks swirl, and he’s forced back a step.</p>
+    <p>He glares, breathing heavily. “Impressive…”</p>
+    <button class="btn" onclick="choosePath('scene33')">Press the advantage</button>
+    <button class="btn" onclick="choosePath('scene34')">Offer a chance to stand down</button>
+  </div>
+
+  <!-- SCENE 18 -->
+  <div id="scene18" class="story">
+    <p>You let your magic subside. Louis inhales, steadying himself. “You yield?” he growls.</p>
+    <p>But he looks almost relieved. Is he tired of fighting, too?</p>
+    <button class="btn" onclick="choosePath('scene35')">Explain you have no wish to harm him</button>
+    <button class="btn" onclick="choosePath('scene36')">Stay silent</button>
+  </div>
+
+  <!-- SCENE 19 -->
+  <div id="scene19" class="story">
+    <p>“I’m here because I seek a cure for the curse on my homeland,” you admit.</p>
+    <p>Louis’s eyes flicker with something—pity? Understanding?</p>
+    <button class="btn" onclick="choosePath('scene37')">Ask for his help</button>
+    <button class="btn" onclick="choosePath('scene38')">Insist you’ll do it alone</button>
+  </div>
+
+  <!-- SCENE 20 -->
+  <div id="scene20" class="story">
+    <p>You remain silent. Louis waits, then scoffs. “Fine, keep your secrets.”</p>
+    <p>He turns away, tension lingering in the air.</p>
+    <button class="btn" onclick="choosePath('scene39')">Call after him</button>
+    <button class="btn" onclick="choosePath('scene40')">Let him leave</button>
+  </div>
+
+  <!-- SCENE 21 -->
+  <div id="scene21" class="story">
+    <p>“Brave…” he murmurs. “Or reckless.” He arches a brow. “Which is it?”</p>
+    <button class="btn" onclick="choosePath('scene41')">“A bit of both.”</button>
+    <button class="btn" onclick="choosePath('scene42')">“I’m guided by purpose.”</button>
+  </div>
+
+  <!-- SCENE 22 -->
+  <div id="scene22" class="story">
+    <p>Louis huffs a short laugh. “At least you’re honest.”</p>
+    <p>He seems less hostile now, though still guarded.</p>
+    <button class="btn" onclick="choosePath('scene43')">Continue conversation</button>
+    <button class="btn" onclick="choosePath('scene44')">Ask about his kingdom</button>
+  </div>
+
+  <!-- SCENE 23 -->
+  <div id="scene23" class="story">
+    <p>Summoning courage, you speak plainly: “Why do you guard these woods so fiercely?”</p>
+    <p>Louis’s dark eyes flash. “Because it’s all I have left.”</p>
+    <button class="btn" onclick="choosePath('scene45')">Press for details</button>
+    <button class="btn" onclick="choosePath('scene46')">Soften your approach</button>
+  </div>
+
+  <!-- SCENE 24 -->
+  <div id="scene24" class="story">
+    <p>You turn away, intending to leave. Louis calls after you, voice uncertain. “You… don’t want to fight?”</p>
+    <p>You sense he isn’t used to such refusal.</p>
+    <button class="btn" onclick="choosePath('scene47')">Explain your reasons</button>
+    <button class="btn" onclick="choosePath('scene48')">Keep walking</button>
+  </div>
+
+  <!-- SCENE 25 -->
+  <div id="scene25" class="story">
+    <p>You rush forward, determined to prove yourself. Louis counters swiftly, a hint of admiration in his gaze.</p>
+    <p>“Stubborn mortal,” he mutters.</p>
+    <button class="btn" onclick="choosePath('scene49')">Keep pressing the attack</button>
+    <button class="btn" onclick="choosePath('scene50')">Offer to talk instead</button>
+  </div>
+
+  <!-- SCENE 26 -->
+  <div id="scene26" class="story">
+    <p>“I have no desire to harm you,” you declare. Louis pauses, heat in his eyes flickering to something like relief.</p>
+    <p>He lowers his guard.</p>
+    <button class="btn" onclick="choosePath('scene50')">Continue</button>
+  </div>
+
+  <!-- SCENE 27 -->
+  <div id="scene27" class="story">
+    <p>You reveal the reasons for your presence—seeking knowledge or a cure for your homeland.</p>
+    <p>Louis listens silently.</p>
+    <button class="btn" onclick="choosePath('scene50')">Ask for his assistance</button>
+  </div>
+
+  <!-- SCENE 28 -->
+  <div id="scene28" class="story">
+    <p>Louis stares at you, expression unreadable. Finally, he says, “Why do you remain silent? Speak.”</p>
+    <button class="btn" onclick="choosePath('scene50')">Open up about your quest</button>
+  </div>
+
+  <!-- SCENE 29 -->
+  <div id="scene29" class="story">
+    <p>You describe your desire for peace. Louis listens intently, arms still folded.</p>
+    <button class="btn" onclick="choosePath('scene50')">Ask for a truce</button>
+  </div>
+
+  <!-- SCENE 30 -->
+  <div id="scene30" class="story">
+    <p>You offer a small token—perhaps a charm or relic. Louis accepts it, examining it curiously.</p>
+    <button class="btn" onclick="choosePath('scene50')">Observe his reaction</button>
+  </div>
+
+  <!-- SCENE 31 -->
+  <div id="scene31" class="story">
+    <p>“My homeland is cursed,” you explain. “I’ve come seeking the rumored dragon magic here.”</p>
+    <p>Louis’s gaze flickers with empathy.</p>
+    <button class="btn" onclick="choosePath('scene50')">Ask him for help</button>
+  </div>
+
+  <!-- SCENE 32 -->
+  <div id="scene32" class="story">
+    <p>You take a bold step forward, studying him. “What about you? Why guard these woods alone?”</p>
+    <button class="btn" onclick="choosePath('scene50')">Press him for details</button>
+  </div>
+
+  <!-- SCENE 33 -->
+  <div id="scene33" class="story">
+    <p>You intensify your witchfire, determined to overcome him. Louis roars in defiance, meeting your power with his flame.</p>
+    <button class="btn" onclick="choosePath('scene50')">Final clash</button>
+  </div>
+
+  <!-- SCENE 34 -->
+  <div id="scene34" class="story">
+    <p>“We need not destroy each other,” you plead. Louis’s chest heaves, but the rage in his eyes diminishes.</p>
+    <button class="btn" onclick="choosePath('scene50')">Extend a truce</button>
+  </div>
+
+  <!-- SCENE 35 -->
+  <div id="scene35" class="story">
+    <p>“I seek knowledge, not destruction,” you clarify. Louis exhales, releasing tension from his stance.</p>
+    <button class="btn" onclick="choosePath('scene50')">Ask for cooperation</button>
+  </div>
+
+  <!-- SCENE 36 -->
+  <div id="scene36" class="story">
+    <p>You remain silent. Louis studies you, then scoffs softly. “Fine. Keep your secrets.”</p>
+    <p>Yet he doesn’t turn away.</p>
+    <button class="btn" onclick="choosePath('scene50')">Break the silence</button>
+  </div>
+
+  <!-- SCENE 37 -->
+  <div id="scene37" class="story">
+    <p>“You’re the only one who can help,” you say. Louis tenses, uncertain.</p>
+    <button class="btn" onclick="choosePath('scene50')">Convince him</button>
+  </div>
+
+  <!-- SCENE 38 -->
+  <div id="scene38" class="story">
+    <p>You insist you don’t need help. Louis bristles. “Foolish mortal,” he mutters, yet he does not leave.</p>
+    <button class="btn" onclick="choosePath('scene50')">Next</button>
+  </div>
+
+  <!-- SCENE 39 -->
+  <div id="scene39" class="story">
+    <p>You call after him, voice echoing in the dark woods. He pauses but doesn’t turn.</p>
+    <button class="btn" onclick="choosePath('scene50')">Approach him</button>
+  </div>
+
+  <!-- SCENE 40 -->
+  <div id="scene40" class="story">
+    <p>You let him leave. Silence envelops the clearing—but something in you stirs, urging you to go after him.</p>
+    <button class="btn" onclick="choosePath('scene50')">Follow him anyway</button>
+  </div>
+
+  <!-- SCENE 41 -->
+  <div id="scene41" class="story">
+    <p>“I am braver than you think,” you declare. Louis’s lip quirks in a half-smile.</p>
+    <button class="btn" onclick="choosePath('scene50')">Ask about his kingdom</button>
+  </div>
+
+  <!-- SCENE 42 -->
+  <div id="scene42" class="story">
+    <p>“Purpose… I had one once,” Louis murmurs. His gaze drifts to the canopy overhead, haunted by memory.</p>
+    <button class="btn" onclick="choosePath('scene50')">Encourage him to open up</button>
+  </div>
+
+  <!-- SCENE 43 -->
+  <div id="scene43" class="story">
+    <p>You keep talking, trying to show him you’re not a threat. Slowly, his posture relaxes.</p>
+    <button class="btn" onclick="choosePath('scene50')">Learn more about him</button>
+  </div>
+
+  <!-- SCENE 44 -->
+  <div id="scene44" class="story">
+    <p>“My kingdom?” Louis’s voice tightens. “It’s gone… destroyed by war.”</p>
+    <button class="btn" onclick="choosePath('scene50')">Offer sympathy</button>
+  </div>
+
+  <!-- SCENE 45 -->
+  <div id="scene45" class="story">
+    <p>You press for details. Louis’s eyes flash with pain. “They took everything,” he growls, voice trembling.</p>
+    <button class="btn" onclick="choosePath('scene50')">Gently comfort him</button>
+  </div>
+
+  <!-- SCENE 46 -->
+  <div id="scene46" class="story">
+    <p>You soften, lowering your voice. “I’m sorry for what you’ve lost.”</p>
+    <p>Louis exhales shakily.</p>
+    <button class="btn" onclick="choosePath('scene50')">Next</button>
+  </div>
+
+  <!-- SCENE 47 -->
+  <div id="scene47" class="story">
+    <p>You explain your reasons: to save your homeland, not to fight. Louis’s anger dims, replaced by curiosity.</p>
+    <button class="btn" onclick="choosePath('scene50')">Continue</button>
+  </div>
+
+  <!-- SCENE 48 -->
+  <div id="scene48" class="story">
+    <p>You keep walking, but Louis follows, albeit at a distance.</p>
+    <button class="btn" onclick="choosePath('scene50')">Eventually stop and talk</button>
+  </div>
+
+  <!-- SCENE 49 -->
+  <div id="scene49" class="story">
+    <p>You keep fighting, determined to prove yourself. Louis counters each strike, intense yet never striking to kill.</p>
+    <button class="btn" onclick="choosePath('scene50')">Realize his restraint</button>
+  </div>
+
+  <!-- SCENE 50: All branches converge into deeper conversation -->
+  <div id="scene50" class="story">
+    <p>Night deepens, and you find yourself talking with Louis—sometimes tensely, sometimes in surprising camaraderie.</p>
+    <p>His dark eyes flicker with curiosity, maybe even respect.</p>
+    <button class="btn" onclick="choosePath('scene51')">Ask about his half-dragon heritage</button>
+    <button class="btn" onclick="choosePath('scene52')">Share your own story</button>
+  </div>
+
+  <!-- SCENE 51 -->
+  <div id="scene51" class="story">
+    <p>“My father was a great dragon from the East, my mother a human princess,” he says quietly. “I have known neither fully.”</p>
+    <button class="btn" onclick="choosePath('scene53')">Show sympathy</button>
+    <button class="btn" onclick="choosePath('scene54')">Ask how it affects him</button>
+  </div>
+
+  <!-- SCENE 52 -->
+  <div id="scene52" class="story">
+    <p>You reveal more about your life, your struggles, and why you ventured here. Louis listens with solemn interest.</p>
+    <button class="btn" onclick="choosePath('scene53')">Ask about his regrets</button>
+    <button class="btn" onclick="choosePath('scene54')">Ask how you can help him</button>
+  </div>
+
+  <!-- SCENE 53 -->
+  <div id="scene53" class="story">
+    <p>Louis’s gaze drifts to the night sky. “I regret not protecting my kingdom,” he murmurs. “This forest is all I have left.”</p>
+    <p>You sense the loneliness behind his guarded façade.</p>
+    <button class="btn" onclick="choosePath('scene55')">Try to comfort him</button>
+    <button class="btn" onclick="choosePath('scene56')">Stand silently beside him</button>
+  </div>
+
+  <!-- SCENE 54 -->
+  <div id="scene54" class="story">
+    <p>“My power is both a blessing and a curse,” Louis admits, rubbing the horn on his head. “I am neither fully dragon nor fully human.”</p>
+    <button class="btn" onclick="choosePath('scene57')">Relate to his struggle</button>
+    <button class="btn" onclick="choosePath('scene58')">Ask about his dreams</button>
+  </div>
+
+  <!-- SCENE 55 -->
+  <div id="scene55" class="story">
+    <p>You rest a gentle hand on his scaled arm. “You did what you could,” you say softly. “No one can blame you alone.”</p>
+    <p>Louis closes his eyes, relief warring with sadness.</p>
+    <button class="btn" onclick="choosePath('scene59')">Encourage him to move forward</button>
+    <button class="btn" onclick="choosePath('scene60')">Stay in supportive silence</button>
+  </div>
+
+  <!-- SCENE 56 -->
+  <div id="scene56" class="story">
+    <p>You stand quietly beside him, letting your presence speak your empathy. After a moment, he exhales shakily.</p>
+    <p>“Perhaps… you understand,” he whispers.</p>
+    <button class="btn" onclick="choosePath('scene59')">Assure him you do</button>
+    <button class="btn" onclick="choosePath('scene60')">Offer a gentle touch</button>
+  </div>
+
+  <!-- SCENE 57 -->
+  <div id="scene57" class="story">
+    <p>You share how you’ve felt torn by your own powers or responsibilities, relating to his half-blood struggle.</p>
+    <p>Louis’s dark eyes soften.</p>
+    <button class="btn" onclick="choosePath('scene59')">Bond over shared burdens</button>
+    <button class="btn" onclick="choosePath('scene60')">Listen to his story</button>
+  </div>
+
+  <!-- SCENE 58 -->
+  <div id="scene58" class="story">
+    <p>“My dreams?” he echoes. “I dream of a place where I can exist without being feared or hated.”</p>
+    <p>He looks at you, a question unspoken.</p>
+    <button class="btn" onclick="choosePath('scene59')">Offer your support</button>
+    <button class="btn" onclick="choosePath('scene60')">Stay silent, but nod understandingly</button>
+  </div>
+
+  <!-- SCENE 59 -->
+  <div id="scene59" class="story">
+    <p>In the silvered moonlight, you and Louis stand closer than before. Hostility has faded, replaced by something else.</p>
+    <p>You both realize a connection is forming.</p>
+    <button class="btn" onclick="choosePath('scene61')">Acknowledge mutual respect</button>
+  </div>
+
+  <!-- SCENE 60 -->
+  <div id="scene60" class="story">
+    <p>Quiet understanding flows between you. Louis lowers his gaze. “This is new,” he admits. “I never thought I’d trust a human.”</p>
+    <button class="btn" onclick="choosePath('scene61')">Encourage further trust</button>
+  </div>
+
+  <!-- SCENE 61: The Growing Bond (Final Arc) -->
+  <div id="scene61" class="story">
+    <p>Over the following days, you and Louis share guarded talks, near-confessions, and careful alliances. His regal bearing softens.</p>
+    <p>You see glimpses of the man behind the dragon scales.</p>
+    <button class="btn" onclick="choosePath('scene62')">Walk with him in the forest</button>
+    <button class="btn" onclick="choosePath('scene63')">Spar gently to test each other</button>
+  </div>
+
+  <!-- SCENE 62 -->
+  <div id="scene62" class="story">
+    <p>As you walk, Louis points out hidden glades and ancient trees. “I’ve guarded these woods for so long… alone,” he admits.</p>
+    <button class="btn" onclick="choosePath('scene64')">Ask about his past companionship</button>
+    <button class="btn" onclick="choosePath('scene65')">Offer to stand by him</button>
+  </div>
+
+  <!-- SCENE 63 -->
+  <div id="scene63" class="story">
+    <p>In a playful spar, you exchange blows—magic or arrows against his draconic strength. Laughter replaces anger.</p>
+    <p>“You’re not bad,” he says, almost smiling.</p>
+    <button class="btn" onclick="choosePath('scene64')">Tease him about going easy on you</button>
+    <button class="btn" onclick="choosePath('scene65')">Admit you admire his skill</button>
+  </div>
+
+  <!-- SCENE 64 -->
+  <div id="scene64" class="story">
+    <p>Louis’s expression flickers—amusement, then something warmer. “Your spirit is stronger than I realized.”</p>
+    <button class="btn" onclick="choosePath('scene66')">Press for deeper bond</button>
+  </div>
+
+  <!-- SCENE 65 -->
+  <div id="scene65" class="story">
+    <p>He meets your gaze, sincerity in his dark eyes. “Perhaps… I admire yours as well.”</p>
+    <button class="btn" onclick="choosePath('scene66')">Share a moment of closeness</button>
+  </div>
+
+  <!-- SCENE 66 -->
+  <div id="scene66" class="story">
+    <p>Over time, tension transforms into true connection. Louis confides secrets: his father’s draconic legacy, his mother’s lost kingdom.</p>
+    <p>You realize your hearts are turning toward each other.</p>
+    <button class="btn" onclick="choosePath('scene67')">Confess your growing feelings</button>
+    <button class="btn" onclick="choosePath('scene68')">Let him speak first</button>
+  </div>
+
+  <!-- SCENE 67 -->
+  <div id="scene67" class="story">
+    <p>You bravely confess: “I never expected to feel this way. Not for someone I was taught to fear.”</p>
+    <p>Louis’s breath catches. He steps closer.</p>
+    <button class="btn" onclick="choosePath('scene69')">Await his response</button>
+  </div>
+
+  <!-- SCENE 68 -->
+  <div id="scene68" class="story">
+    <p>You hold your tongue, but your eyes say it all. Louis senses it. “There’s something between us,” he murmurs.</p>
+    <button class="btn" onclick="choosePath('scene69')">Nod in agreement</button>
+  </div>
+
+  <!-- SCENE 69 -->
+  <div id="scene69" class="story">
+    <p>He gently touches the scales on his arm, as if afraid to be rejected. “I’m half dragon, half human. I belong nowhere…”</p>
+    <p>Do you:</p>
+    <button class="btn" onclick="choosePath('scene70')">Reassure him he belongs with you</button>
+    <button class="btn" onclick="choosePath('scene71')">Tell him you accept him completely</button>
+  </div>
+
+  <!-- SCENE 70 -->
+  <div id="scene70" class="story">
+    <p>“You belong here, with me,” you say, voice trembling with honesty. Louis’s eyes shine.</p>
+    <button class="btn" onclick="choosePath('scene72')">He steps closer</button>
+  </div>
+
+  <!-- SCENE 71 -->
+  <div id="scene71" class="story">
+    <p>“I accept all of you,” you whisper. “Your dragon side, your human side—both.”</p>
+    <p>Louis exhales, relief and hope mixing.</p>
+    <button class="btn" onclick="choosePath('scene72')">He reaches for your hand</button>
+  </div>
+
+  <!-- SCENE 72 -->
+  <div id="scene72" class="story">
+    <p>In the hush of the enchanted forest, you and Louis exchange a look that transcends words.</p>
+    <p>He leans in. “We were enemies,” he murmurs, “yet now…”</p>
+    <button class="btn" onclick="choosePath('scene73')">Let him finish</button>
+  </div>
+
+  <!-- SCENE 73 -->
+  <div id="scene73" class="story">
+    <p>“...I cannot imagine letting you go,” he admits softly.</p>
+    <p>You feel a powerful pull, an unmistakable bond forming.</p>
+    <button class="btn" onclick="choosePath('scene74')">Return his feelings</button>
+  </div>
+
+  <!-- SCENE 74 -->
+  <div id="scene74" class="story">
+    <p>You tell him your heart has changed too. The forest around you seems to shimmer with quiet approval.</p>
+    <button class="btn" onclick="choosePath('scene75')">Draw closer to him</button>
+  </div>
+
+  <!-- SCENE 75 -->
+  <div id="scene75" class="story">
+    <p>Louis’s arms slip around you, warm with a dragon’s heat. Your heart pounds, realizing how far you’ve come—from enemies to this fragile trust.</p>
+    <button class="btn" onclick="choosePath('scene76')">Look into his eyes</button>
+  </div>
+
+  <!-- SCENE 76 -->
+  <div id="scene76" class="story">
+    <p>His dark eyes reflect the moonlight. “Let me protect you,” he breathes. “Let me stand by your side.”</p>
+    <p>All your fear dissolves.</p>
+    <button class="btn" onclick="choosePath('scene77')">Agree wholeheartedly</button>
+  </div>
+
+  <!-- SCENE 77 -->
+  <div id="scene77" class="story">
+    <p>You nod, tears of relief burning your eyes. “We protect each other,” you say, voice tight with emotion.</p>
+    <p>Louis smiles—a real, unguarded smile.</p>
+    <button class="btn" onclick="choosePath('scene78')">The final affirmation</button>
+  </div>
+
+  <!-- SCENE 78 -->
+  <div id="scene78" class="story">
+    <p>He lowers his head until his forehead rests gently against yours, horn brushing your hair.</p>
+    <p>A stillness settles, a beat of clarity.</p>
+    <button class="btn" onclick="choosePath('scene79')">Close your eyes</button>
+  </div>
+
+  <!-- SCENE 79 -->
+  <div id="scene79" class="story">
+    <p>You close your eyes, and in the darkness, you feel Louis’s breath, warm and comforting.</p>
+    <p>The forest hushes, as if granting you this moment of peace.</p>
+    <button class="btn" onclick="choosePath('scene80')">Kiss him</button>
+  </div>
+
+  <!-- SCENE 80: KISS & HAPPY ENDING -->
+  <div id="scene80" class="story">
+    <p>Your lips meet in a gentle, tentative kiss that deepens with each heartbeat. Dragon scales brush your skin as Louis draws you closer.</p>
+    <p>All the tension between your worlds dissolves into this moment, forging a new bond.</p>
+    <button class="btn" onclick="endGame()">End</button>
+  </div>
+
+  <script>
+    // Start button -> first scene
+    document.getElementById("startBtn").addEventListener("click", function() {
+      this.style.display = "none";
+      choosePath("scene1");
+    });
+
+    // Reusable scene transition function
+    function choosePath(sceneId) {
+      // Hide all scenes first
+      document.querySelectorAll('.story').forEach(scene => {
+        scene.style.display = "none";
+        scene.style.opacity = "0";
+      });
+
+      // Show the selected scene if it exists, else end
+      let nextScene = document.getElementById(sceneId);
+      if (nextScene) {
+        nextScene.style.display = "block";
+        setTimeout(() => {
+          nextScene.style.opacity = "1";
+        }, 50);
+      } else {
+        endGame();
+      }
+    }
+
+    // End game -> displays final text
+    function endGame() {
+      document.body.innerHTML = `
+        <div style='text-align: center; padding: 50px;'>
+          <h1 style='margin-bottom: 20px;'>
+            You and Louis share a passionate kiss beneath the moonlight.<br>
+            Fireworks of magic and dragon flame light the sky.<br>
+            Your fate is sealed together in love.
+          </h1>
+          <p>Thank you for playing! All paths lead to this happy ending, for your hearts are bound by destiny.</p>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
