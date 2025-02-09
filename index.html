@@ -762,9 +762,12 @@
   <script>
     // Start button -> first scene
     document.getElementById("startBtn").addEventListener("click", function() {
-      this.style.display = "none";
-      choosePath("introStory");
-    });
+  // Hide the entire startScreen container
+  document.getElementById("startScreen").style.display = "none";
+
+  // Now continue to the intro story
+  choosePath("introStory");
+});
 
     // Reusable scene transition function
     function choosePath(sceneId) {
