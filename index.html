@@ -52,14 +52,25 @@
       padding: 20px;
       transition: background-color 2s, opacity 1s;
     }
-    .container {
-  max-width: 600px;
-  margin: auto;
-  /* The lines below are new/updated: */
+
+    #startScreen {
+  /* optional max width if desired: 
+     max-width: 600px; 
+  */
+  margin: 0 auto;
+  padding: 1rem;
+
+  /* Use the smaller/longer image approach */
   background: url("Dragon City.png") no-repeat center center;
-  background-size: cover;        /* or "contain" if you prefer */
-  min-height: 80vh;             /* Ensures enough vertical space to see the image */
-  display: flex;                /* So we can center button within container */
+  background-size: contain; 
+  /* contain => keeps entire image visible, 
+     making it smaller on wide screens */
+
+  /* The container height so it doesn’t fill the entire page */
+  height: clamp(300px, 50vh, 600px);
+
+  /* Center the button vertically/horizontally in this container */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -67,7 +78,6 @@
   opacity: 0;
   animation: fadeIn 2s forwards;
 }
-    
     
     .btn {
   /* Uses clamp() so the font stays readable on phone (14px min) 
@@ -163,9 +173,9 @@
 
 
   <!-- START BUTTON (updated) -->
-<div class="container">
+<div id="startScreen">
     <button id="startBtn" class="btn">Begin the Journey</button>
-  </div>
+</div>
 
   <!-- BACKSTORY/INTRO PAGE -->
 <div id="introStory" class="story">
